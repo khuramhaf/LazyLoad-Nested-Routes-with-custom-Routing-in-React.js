@@ -1,23 +1,31 @@
 import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import {useState, useEffect} from 'react'
+import Mainrender from './Mainrender';
+import {useRef} from 'react'
+
 
 function App() {
+const [state, setstate] = useState(0)
+
+function myfun(){
+
+  setstate(1)
+
+}
+
+function myfun1(){
+
+  setstate(2)
+}
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <button  onClick={myfun}>Accounts</button>
+
+    <button onClick={myfun1}>Cards</button>
+<Mainrender state={state}/>
     </div>
   );
 }
